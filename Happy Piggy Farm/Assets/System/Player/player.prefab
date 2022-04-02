@@ -7,17 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 155964934754330305, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3401542295743303767, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3401542295743303767, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3401542295743303767, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3401542295743303767, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_LocalPosition.z
@@ -116,9 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteTransform: {fileID: 4683244513059129417}
+  animator: {fileID: 1199938830}
   rigid: {fileID: 7917495169121926876}
   player: {fileID: -5465449432506537118}
-  animator: {fileID: 1199938830}
 --- !u!114 &-5465449432506537118
 MonoBehaviour:
   m_ObjectHideFlags: 0
