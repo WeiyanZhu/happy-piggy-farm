@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FoodGenerator : MonoBehaviour
+public class FoodManager : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D spawnArea;
     [SerializeField] private List<GameObject> foodPrefs = new List<GameObject>();
+    [SerializeField] private List<Food> foods = new List<Food>();
     [SerializeField] private float spawnIntervalMin = 0.1f;
     [SerializeField] private float spawnIntervalMax = 0.5f;
     private float timer = 0;
@@ -34,6 +35,22 @@ public class FoodGenerator : MonoBehaviour
                                     spawnArea.bounds.center.y + spawnArea.bounds.extents.y);
         Vector2 spawnPos = new Vector2(Random.Range(xRange.x, xRange.y), Random.Range(yRange.x, yRange.y));
         GameObject randomFoodPref = foodPrefs[Random.Range(0, foodPrefs.Count)];
-        Instantiate(randomFoodPref, spawnPos, Quaternion.identity);
+        Food food = Instantiate(randomFoodPref, spawnPos, Quaternion.identity).GetComponent<Food>();
+        food.SetManager(this);
+        foods.Add(food.GetComponent<Food>());
+    }
+
+    public void RemoveFood(Food food)
+    {
+        foods.Remove(food);
+    }
+
+    public void ClearAllFoods()
+    {
+        foreach(Food f in foods)
+        {
+            Destroy(f.gameObject);
+        }
+        foods.Clear();
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private int day = 1;
-    [SerializeField] List<Pig> pigs;
-    [SerializeField] Timer timer;
+    [SerializeField] private List<Pig> pigs;
+    [SerializeField] private Timer timer;
+    [SerializeField] private FoodManager foodManager;
+    [SerializeField] private ResultPageManager resultPageManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,12 @@ public class GameManager : MonoBehaviour
     // Enter End Day to show result of the day, then go to next day
     public void EndDay()
     {
-
+        resultPageManager.CheckResult(pigs);
     }
 
     public void SetupNewDay()
     {
+        foodManager.ClearAllFoods();
         timer.ReStart();
     }
 }

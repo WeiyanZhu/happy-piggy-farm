@@ -1,3 +1,5 @@
 {"textInfos":[
-    {"key":"weight","content":"Weight"}
+    {"key":"weight","content":"Weight"},
+    {"key":"today_result","content":"Today's Result"},
+    {"key":"next_day_button","content":"Next"}
 ]}

@@ -23,6 +23,7 @@ public class Timer : MonoBehaviour
             timer += Time.deltaTime;
             UpdateUI();
             if(timer > secondsInDay){
+                TimerFinish();
                 active = false;
             }
         }

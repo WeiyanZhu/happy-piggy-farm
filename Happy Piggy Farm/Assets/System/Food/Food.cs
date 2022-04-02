@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
+    private FoodManager manager;   
     [SerializeField] private float weightGain = 1;
     public float WeightGain {get => weightGain; private set => weightGain = value;}
     // Start is called before the first frame update
@@ -18,9 +19,15 @@ public class Food : MonoBehaviour
         
     }
 
+    public void SetManager(FoodManager manager)
+    {
+        this.manager = manager;
+    }
+
     private void OnTriggerEnter2D(Collider2D collider){
         if(collider.GetComponent<Pig>()){
             collider.GetComponent<Pig>().EatFood(this);
+            manager.RemoveFood(this);
             Destroy(gameObject);
         }
     }

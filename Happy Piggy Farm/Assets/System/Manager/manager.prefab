@@ -48,6 +48,7 @@ MonoBehaviour:
   spawnArea: {fileID: 131499855}
   foodPrefs:
   - {fileID: 3267303471466184546, guid: 314a3900154333042a8c9159a8c68a78, type: 3}
+  foods: []
   spawnIntervalMin: 0.5
   spawnIntervalMax: 1
 --- !u!61 &131499855
@@ -120,6 +121,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3247019e99cc91045a4f0471adfae9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pigs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timer: {fileID: 0}
+  foodManager: {fileID: 131499854}
 --- !u!1 &3246080867310273725
 GameObject:
   m_ObjectHideFlags: 0

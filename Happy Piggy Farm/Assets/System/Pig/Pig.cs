@@ -6,8 +6,11 @@ using TMPro;
 public class Pig : MonoBehaviour
 {
     protected float weight = 50;
+    public float Weight{get => weight; private set => weight = value;}
     private float speedBase = 2;
     [SerializeField] private TextMeshProUGUI weightText;
+    private bool dead = false;
+    public bool Dead {get => dead; private set => dead = value;}
     // Start is called before the first frame update
     virtual protected void Start()
     {
@@ -43,5 +46,11 @@ public class Pig : MonoBehaviour
 
     private void OnWeightChange(){
         weightText.text = TextLibrary.Instance.GetText("game", "weight") + " : " + (Mathf.Round(weight * 100) /100.0f).ToString();
+    }
+
+    public void Die()
+    {
+        dead = true;
+        gameObject.SetActive(false);
     }
 }
