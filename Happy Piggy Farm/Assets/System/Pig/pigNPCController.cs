@@ -26,6 +26,7 @@ public class pigNPCController : PigController
         Vector2 velocity = diff.normalized * speed * speedMod;
         CheckDirection(velocity.x);
         rigid.velocity = velocity;
+        animator.SetFloat("speed", velocity.magnitude);
         npc.ConsumeWeight(Time.fixedDeltaTime, 0.01f + 0.05f * velocity.magnitude);
         if(diff.magnitude < 0.1f){
             GetNewTarget();

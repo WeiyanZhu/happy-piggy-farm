@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteTransform: {fileID: 686696156812801935}
+  animator: {fileID: 6762558371584645045}
   rigid: {fileID: 2637156091317584154}
   manager: {fileID: 0}
   npc: {fileID: 6784349520563278980}
@@ -124,6 +125,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weightText: {fileID: 3593398034380355452}
+--- !u!95 &6762558371584645045
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637156091317584151}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65581bca2904d524588fc816a3d01cb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &2637156091317584154 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3401542295743303764, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
