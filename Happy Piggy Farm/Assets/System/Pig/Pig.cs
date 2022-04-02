@@ -22,7 +22,7 @@ public class Pig : MonoBehaviour
 
     public void EatFood(Food food)
     {
-        
+        ChangeWeight(weight + food.WeightGain);
     }
 
     public void ConsumeWeight(float deltaTime, float lostWeightSpeed = 1)
