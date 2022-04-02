@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : PigController
 {
     [SerializeField] private Player player;
     [SerializeField] private Rigidbody2D rigid;
-    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
     private DefaultInputAction inputAction;
     private bool freezed = false;
@@ -29,36 +28,12 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         float speed = player.GetSpeed();
-        float xSpeed = inputAction.Player.Move.ReadValue<Vector2>().x * speed;
-        float ySpeed = inputAction.Player.Move.ReadValue<Vector2>().y * speed;
-        CheckDirection(xSpeed);
-        rigid.velocity = new Vector2(xSpeed, ySpeed);
-        animator.SetFloat("speed", Mathf.Abs(xSpeed));
-    }
-
-    private void CheckDirection(float xSpeed)
-    {
-        if(xSpeed > 0)
-        {
-            TurnRight();
-        }else if(xSpeed < 0)
-        {
-            TurnLeft();
-        }
-    }
-
-    public void TurnLeft()
-    {
-        Vector3 newScale = spriteRenderer.transform.localScale;
-        newScale.x = -Mathf.Abs(newScale.x);
-        spriteRenderer.transform.localScale = newScale;
-    }
-
-    public void TurnRight()
-    {
-        Vector3 newScale = spriteRenderer.transform.localScale;
-        newScale.x = Mathf.Abs(newScale.x);
-        spriteRenderer.transform.localScale = newScale;
+        float xSpeed = inputAction.Player.Move.ReadValue<Vector2>().x;
+        float ySpeed = inputAction.Player.Move.ReadValue<Vector2>().y;
+        Vector2 velocity = new Vector2(xSpeed, ySpeed).normalized * speed;
+        CheckDirection(velocity.x);
+        rigid.velocity = velocity;
+        player.ConsumeWeight(Time.fixedDeltaTime, 0.01f + 0.05f * velocity.magnitude);
     }
 
     public void Freeze()
