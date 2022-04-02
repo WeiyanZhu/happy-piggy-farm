@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    private int day = 1;
+    private int day = 0;
     [SerializeField] private List<Pig> pigs;
     [SerializeField] private Timer timer;
     [SerializeField] private FoodManager foodManager;
     [SerializeField] private ResultPageManager resultPageManager;
+    [SerializeField] private TextMeshProUGUI dayText;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
     public void SetupNewDay()
     {
         day += 1;
+        dayText.text = string.Format(TextLibrary.Instance.GetText("game", "day_x"), day);
         foodManager.Reset();
         timer.ReStart();
         foreach(Pig p in pigs)
