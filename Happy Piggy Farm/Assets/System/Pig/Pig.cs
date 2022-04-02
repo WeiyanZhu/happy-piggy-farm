@@ -6,7 +6,7 @@ using TMPro;
 public class Pig : MonoBehaviour
 {
     protected float weight = 50;
-    private float speedBase = 10;
+    private float speedBase = 2;
     [SerializeField] private TextMeshProUGUI weightText;
     // Start is called before the first frame update
     virtual protected void Start()

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PigController : MonoBehaviour
 {
     [SerializeField] protected Transform spriteTransform;
+    [SerializeField] protected Rigidbody2D rigid;
     protected void CheckDirection(float xSpeed)
     {
         if(xSpeed > 0)

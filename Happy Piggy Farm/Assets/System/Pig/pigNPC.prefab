@@ -1,12 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4815512773039304328
+--- !u!1001 &841535190403715406
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1794550745403725099, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5459859
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794550745403725099, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4405482
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794550745403725099, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9433962
+      objectReference: {fileID: 0}
     - target: {fileID: 3401542295743303767, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,94 +65,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3401542295743303769, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_Name
-      value: player
+      value: pigNPC
       objectReference: {fileID: 0}
     - target: {fileID: 3401542295743303769, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3617922628102933856, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5354494936430365585, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7253770202605084156, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
---- !u!4 &4683244513059129417 stripped
+--- !u!4 &686696156812801935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 155964934754330305, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
-  m_PrefabInstance: {fileID: 4815512773039304328}
+  m_PrefabInstance: {fileID: 841535190403715406}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7917495169121926865 stripped
+--- !u!1 &2637156091317584151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3401542295743303769, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
-  m_PrefabInstance: {fileID: 4815512773039304328}
+  m_PrefabInstance: {fileID: 841535190403715406}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1199938830
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7917495169121926865}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 436f98d423ac9924fb9a340159c0fb4c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-8869427945089435251
+--- !u!114 &5889250914645141356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7917495169121926865}
+  m_GameObject: {fileID: 2637156091317584151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5ddbb8e1008b7448736b3da0e43235, type: 3}
+  m_Script: {fileID: 11500000, guid: 467585193e7f44a4eb748a35df3fd5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteTransform: {fileID: 4683244513059129417}
-  rigid: {fileID: 7917495169121926876}
-  player: {fileID: -5465449432506537118}
-  animator: {fileID: 1199938830}
---- !u!114 &-5465449432506537118
+  spriteTransform: {fileID: 686696156812801935}
+  rigid: {fileID: 2637156091317584154}
+  manager: {fileID: 0}
+  npc: {fileID: 6784349520563278980}
+--- !u!114 &6784349520563278980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7917495169121926865}
+  m_GameObject: {fileID: 2637156091317584151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91fe7ad0ed36ac4429b4f9731a2a9dc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9704a473bf07d6a498a5be911cf6852f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weightText: {fileID: 8694138535786039482}
---- !u!50 &7917495169121926876 stripped
+  weightText: {fileID: 3593398034380355452}
+--- !u!50 &2637156091317584154 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3401542295743303764, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
-  m_PrefabInstance: {fileID: 4815512773039304328}
+  m_PrefabInstance: {fileID: 841535190403715406}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8694138535786039482 stripped
+--- !u!114 &3593398034380355452 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4211969240046167602, guid: f5b0c9fbec526c24a8d3d7c85c7f5f88, type: 3}
-  m_PrefabInstance: {fileID: 4815512773039304328}
+  m_PrefabInstance: {fileID: 841535190403715406}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

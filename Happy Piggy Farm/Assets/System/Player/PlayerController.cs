@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : PigController
 {
     [SerializeField] private Player player;
-    [SerializeField] private Rigidbody2D rigid;
     [SerializeField] private Animator animator;
     private DefaultInputAction inputAction;
     private bool freezed = false;

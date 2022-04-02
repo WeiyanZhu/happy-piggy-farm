@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PigNPC : Pig
 {
-    // Start is called before the first frame update
     override protected void Start()
     {
-        
+        base.Start();
+
     }
 
     // Update is called once per frame
     override protected void Update()
     {
-        
+        base.Update();
     }
+
 }
