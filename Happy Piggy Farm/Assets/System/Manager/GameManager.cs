@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        day = 1;
+        day = 0;
         SetupNewDay();
     }
 
@@ -26,11 +26,17 @@ public class GameManager : MonoBehaviour
     public void EndDay()
     {
         resultPageManager.CheckResult(pigs);
+        foodManager.Freeze();
+        foreach(Pig p in pigs)
+            p.GetComponent<PigController>().Freeze();
     }
 
     public void SetupNewDay()
     {
-        foodManager.ClearAllFoods();
+        day += 1;
+        foodManager.Reset();
         timer.ReStart();
+        foreach(Pig p in pigs)
+            p.GetComponent<PigController>().UnFreeze();
     }
 }

@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd530e26f031c34581229838854abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsInDay: 60
+  secondsInDay: 10
   timerFillImage: {fileID: 1420255600}
   gameManager: {fileID: 1304458562}
 --- !u!224 &712803831 stripped

@@ -16,6 +16,8 @@ public class pigNPCController : PigController
 
     private void FixedUpdate()
     {
+        if(freezed)
+            return;
         Move();
     }
 

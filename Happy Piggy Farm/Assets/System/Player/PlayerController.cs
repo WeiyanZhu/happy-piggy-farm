@@ -6,7 +6,6 @@ public class PlayerController : PigController
 {
     [SerializeField] private Player player;
     private DefaultInputAction inputAction;
-    private bool freezed = false;
     void Start()
     {
         inputAction = new DefaultInputAction();
@@ -16,10 +15,7 @@ public class PlayerController : PigController
     void FixedUpdate()
     {
         if(freezed)
-        {
-            animator.SetFloat("speed", 0);
             return;
-        }
         Move();
     }
 
@@ -33,16 +29,5 @@ public class PlayerController : PigController
         CheckDirection(velocity.x);
         rigid.velocity = velocity;
         player.ConsumeWeight(Time.fixedDeltaTime, 0.01f + 0.05f * velocity.magnitude);
-    }
-
-    public void Freeze()
-    {
-        freezed = true;
-        rigid.velocity = Vector2.zero;
-    }
-
-    public void UnFreeze()
-    {
-        freezed = false;
     }
 }

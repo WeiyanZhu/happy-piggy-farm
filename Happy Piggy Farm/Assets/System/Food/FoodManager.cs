@@ -11,6 +11,7 @@ public class FoodManager : MonoBehaviour
     [SerializeField] private float spawnIntervalMax = 0.5f;
     private float timer = 0;
     private float spawnInterval;
+    private bool freezed = false;
 
     void Start()
     {
@@ -19,6 +20,8 @@ public class FoodManager : MonoBehaviour
 
     void Update()
     {
+        if(freezed)
+            return;
         timer += Time.deltaTime;
         if(timer >= spawnInterval){
             timer -= spawnInterval;
@@ -45,12 +48,18 @@ public class FoodManager : MonoBehaviour
         foods.Remove(food);
     }
 
-    public void ClearAllFoods()
+    public void Freeze()
+    {
+        freezed = true;
+    }
+
+    public void Reset()
     {
         foreach(Food f in foods)
         {
             Destroy(f.gameObject);
         }
         foods.Clear();
+        freezed = false;
     }
 }
