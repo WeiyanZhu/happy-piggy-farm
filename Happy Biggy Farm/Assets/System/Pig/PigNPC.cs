@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Pig
+public class PigNPC : Pig
 {
     // Start is called before the first frame update
-    void Start()
+    override protected void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    override protected void Update()
     {
         
     }

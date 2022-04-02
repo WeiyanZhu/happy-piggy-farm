@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Pig : MonoBehaviour
 {
+    protected float weight = 50;
+    private float speedBase;
     // Start is called before the first frame update
-    void Start()
+    virtual protected void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    virtual protected void Update()
     {
         
+    }
+
+    public void EatFood(Food food)
+    {
+        
+    }
+
+    public float GetSpeed(){
+        return speedBase;
     }
 }
