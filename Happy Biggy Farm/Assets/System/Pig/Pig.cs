@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pig : MonoBehaviour
 {
     protected float weight = 50;
-    private float speedBase;
+    private float speedBase = 10;
     // Start is called before the first frame update
     virtual protected void Start()
     {
