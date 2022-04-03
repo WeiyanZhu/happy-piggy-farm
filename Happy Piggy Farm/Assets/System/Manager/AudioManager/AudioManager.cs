@@ -48,7 +48,9 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySFX(AudioClip clip, float volumeScale = 1)
     {
-        sfxAudioSource.PlayOneShot(clip, volumeScale);
+        sfxAudioSource.clip = clip;
+        sfxAudioSource.volume = volumeScale;
+        sfxAudioSource.Play();
     }
 
     public void PlaySFX(SFXFileName clipName, float volumeScale = 1)
