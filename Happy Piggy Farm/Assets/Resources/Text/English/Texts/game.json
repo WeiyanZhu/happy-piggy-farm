@@ -1,6 +1,7 @@
 {"textInfos":[
     {"key":"weight","content":"Weight"},
     {"key":"today_result","content":"Today's Result"},
-    {"key":"next_day_button","content":"Next"},
-    {"key":"day_x","content":"Day {0}"}
+    {"key":"next_button","content":"Next"},
+    {"key":"day_x","content":"Day {0}"},
+    {"key":"tutorial","content":"Everyday the fattest and thinnest pigs will get eaten by the townfolks. Survive as long as you can."}
 ]}

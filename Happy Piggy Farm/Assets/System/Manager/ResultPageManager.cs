@@ -63,6 +63,6 @@ public class ResultPageManager : MonoBehaviour
 
     public void BackToMainMenuButton()
     {
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }
