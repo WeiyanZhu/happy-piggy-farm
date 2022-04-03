@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         foreach(Pig p in pigs)
             p.GetComponent<PigController>().Freeze();
         AudioManager.Instance.PlayMusic(BGMFileName.Farm);
+        tutorialUI.SetActive(true);
     }
 
     // Update is called once per frame

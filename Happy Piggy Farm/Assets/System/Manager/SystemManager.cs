@@ -5,7 +5,7 @@ using UnityEngine;
 public class SystemManager : Singleton<SystemManager> 
 {
     private Language language = Language.English;
-    public Language Language {get => language; private set => language = value;}
+    public Language Language {get => language; set => language = value;}
     void Start()
     {
         

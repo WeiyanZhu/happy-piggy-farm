@@ -21,27 +21,26 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    /*
     [Header("Language")]
     [SerializeField] private SetTextWithJSON[] mainMenuTexts;
 
     public void ChangeLanguageButton()
     {
-        SystemManager.instance.AudioManager.PlaySFX(SFXFileName.Interact);
+        AudioManager.Instance.PlaySFX(SFXFileName.UIClickPig);
         int len = System.Enum.GetNames(typeof(Language)).Length;
         //switch to the next language
-        Language newLan = (Language) (((int)(SystemManager.instance.Language) + 1)%len);
+        Language newLan = (Language) (((int)(SystemManager.Instance.Language) + 1)%len);
         ChangeLanguage(newLan);
     }
 
     public void ChangeLanguage(Language lan)
     {
-        if(SystemManager.instance.Language != lan)
+        if(SystemManager.Instance.Language != lan)
         {
-            SystemManager.instance.Language = lan;
+            SystemManager.Instance.Language = lan;
             foreach(SetTextWithJSON t in mainMenuTexts){
                 t.UpdateValue();
             }
         }
-    }*/
+    }
 }
