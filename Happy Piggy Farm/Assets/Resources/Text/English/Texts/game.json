@@ -11,5 +11,6 @@
     {"key":"survive_text","content":"You survived, good Job"},
     {"key":"dead_text","content":"Oh no, you became barbeque pork chops"},
     {"key":"ending1","content":"Competing with other pigs can only delay our death"},
-    {"key":"ending2","content":"The pigs run away from the farm."}
+    {"key":"ending2","content":"You defeated the evil farmer, you and other pigs are saved!\n\nThank you for playing~"},
+    {"key":"yeah_button","content":"Yeah"}
 ]}

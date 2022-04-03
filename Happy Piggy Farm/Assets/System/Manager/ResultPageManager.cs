@@ -6,7 +6,9 @@ public class ResultPageManager : MonoBehaviour
 {
     [SerializeField] private List<ResultPagePig> resultPagePigs = new List<ResultPagePig>();
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private Animator resultPageAnimator;
     [Header("UI")]
+    [SerializeField] private GameObject goodEndUI;
     [SerializeField] private GameObject nextButton;
     [SerializeField] private GameObject mainMenuButton;
     [SerializeField] private GameObject attackButton;
@@ -80,6 +82,7 @@ public class ResultPageManager : MonoBehaviour
         surviveText.SetActive(false);
         deadText.SetActive(false);
         badEndText.SetActive(false);
+        goodEndUI.SetActive(false);
 
         gameObject.SetActive(true);
         AudioManager.Instance.PlayMusic(BGMFileName.ResultOfTheDay);
@@ -100,6 +103,19 @@ public class ResultPageManager : MonoBehaviour
 
     public void AttackButton()
     {
-        
+        AudioManager.Instance.PlaySFX(SFXFileName.UIClickPig);
+        nextButton.SetActive(false);
+        attackButton.SetActive(false);
+        StartCoroutine(AttackRoutine());
+    }
+
+    private IEnumerator AttackRoutine()
+    {
+        resultPageAnimator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.Instance.PlaySFX(SFXFileName.Stab);
+        yield return new WaitForSeconds(1f);
+        AudioManager.Instance.PlayMusic(BGMFileName.MainMenu);
+        goodEndUI.SetActive(true);
     }
 }

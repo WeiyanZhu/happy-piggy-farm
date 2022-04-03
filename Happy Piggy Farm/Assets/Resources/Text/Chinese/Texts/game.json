@@ -11,5 +11,6 @@
     {"key":"survive_text","content":"你活下来了 真棒"},
     {"key":"dead_text","content":"偶不 你变成百叶结红烧肉了"},
     {"key":"ending1","content":"就算努力去和同类竞争内卷，最后也只是把便当的时间推迟而已"},
-    {"key":"ending2","content":"猪猪们逃出了农场。"}
+    {"key":"ending2","content":"你打败了邪恶的牧场主，你和其他猪猪们得救了！\n\n感谢游玩~"},
+    {"key":"yeah_button","content":"好耶"}
 ]}
