@@ -9,6 +9,7 @@ public class ResultPageManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject nextButton;
     [SerializeField] private GameObject mainMenuButton;
+    [SerializeField] private GameObject attackButton;
     [SerializeField] private GameObject surviveText;
     [SerializeField] private GameObject deadText;
     [SerializeField] private GameObject badEndText;
@@ -48,6 +49,9 @@ public class ResultPageManager : MonoBehaviour
         {
             badEndText.SetActive(true);
             mainMenuButton.SetActive(true);
+            PlayerPrefs.SetString("NewGamePlus", "true");
+            PlayerPrefs.Save();
+            SystemManager.Instance.NewGamePlus = true;
             yield break;
         }
         resultPagePigs[thinnest].DieAnimation();
@@ -58,7 +62,11 @@ public class ResultPageManager : MonoBehaviour
         {
             deadText.SetActive(true);
             mainMenuButton.SetActive(true);
-        }else{
+        }else if(pigs[0].GetComponent<Player>().EquipedSword){
+            attackButton.SetActive(true);
+            nextButton.SetActive(true);
+        }
+        else{
             surviveText.SetActive(true);
             nextButton.SetActive(true);
         }
@@ -68,6 +76,7 @@ public class ResultPageManager : MonoBehaviour
     {
         nextButton.SetActive(false);
         mainMenuButton.SetActive(false);
+        attackButton.SetActive(false);
         surviveText.SetActive(false);
         deadText.SetActive(false);
         badEndText.SetActive(false);
@@ -87,5 +96,10 @@ public class ResultPageManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(SFXFileName.UIClickPig);
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
+    public void AttackButton()
+    {
+        
     }
 }

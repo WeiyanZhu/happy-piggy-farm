@@ -1,6 +1,7 @@
 Ultimate SFX Bundle - HD Remaster
 	Bloody stabs 3
 	Hover over button sound 4
+	Weapon Equipped 4
 
 Universal Sound FX
 	ANIMAL_Pig_Grunt_mono

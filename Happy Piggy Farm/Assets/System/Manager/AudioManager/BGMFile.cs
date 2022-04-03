@@ -18,7 +18,8 @@ public enum SFXFileName
     UIHover = 0,
     Eat = 1,
     Stab = 2,
-    TimeUp = 4
+    TimeUp = 4,
+    Equip = 5
 }
 
 [System.Serializable]

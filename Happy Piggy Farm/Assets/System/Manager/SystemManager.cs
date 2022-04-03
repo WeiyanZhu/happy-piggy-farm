@@ -6,9 +6,15 @@ public class SystemManager : Singleton<SystemManager>
 {
     private Language language = Language.English;
     public Language Language {get => language; set => language = value;}
-    void Start()
+    private bool newGamePlus = false;
+    public bool NewGamePlus {get => newGamePlus; set => newGamePlus = value;}
+    protected override void Awake()
     {
-        
+        base.Awake();
+        if(PlayerPrefs.HasKey("NewGamePlus") && PlayerPrefs.GetString("NewGamePlus") == "true")
+        {
+            SystemManager.Instance.NewGamePlus = true;
+        }
     }
 
     void Update()
