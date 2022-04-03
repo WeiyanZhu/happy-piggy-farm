@@ -1,12 +1,15 @@
 {"textInfos":[
     {"key":"weight","content":"Weight"},
     {"key":"today_result","content":"Today's Result"},
+    {"key":"start_button","content":"Start"},
     {"key":"next_button","content":"Next"},
     {"key":"main_menu_button","content":"Main Menu"},
     {"key":"attack_button","content":"Attack"},
     {"key":"day_x","content":"Day {0}"},
     {"key":"time_up","content":"Time's Up"},
-    {"key":"tutorial","content":"Everyday the fattest and thinnest pigs will get eaten by the townfolks. Survive as long as you can."},
-    {"key":"ending1","content":"Competing with other pigs can only delay our death."},
+    {"key":"tutorial","content":"Everyday the fattest and thinnest pigs will get eaten by the townfolks. Survive as long as you can.\n\nMove with WASD."},
+    {"key":"survive_text","content":"You survived, good Job"},
+    {"key":"dead_text","content":"Oh no, you became barbeque pork chops"},
+    {"key":"ending1","content":"Competing with other pigs can only delay our death"},
     {"key":"ending2","content":"The pigs run away from the farm."}
 ]}

@@ -1,12 +1,15 @@
 {"textInfos":[
     {"key":"weight","content":"体重"},
     {"key":"today_result","content":"今天的结果"},
+    {"key":"start_button","content":"开始"},
     {"key":"next_button","content":"继续"},
     {"key":"main_menu_button","content":"标题菜单"},
     {"key":"attack_button","content":"攻击"},
     {"key":"day_x","content":"第{0}天"},
     {"key":"time_up","content":"时间到"},
-    {"key":"tutorial","content":"每天最胖和最瘦的猪会被牧场主变成红烧肉。努力活下去吧。"},
-    {"key":"ending1","content":"就算努力去和同类竞争内卷，最后也只是把便当的时间推迟而已。"},
+    {"key":"tutorial","content":"每天最胖和最瘦的猪会被牧场主变成红烧肉。努力活下去吧。\n\n用WASD来移动。"},
+    {"key":"survive_text","content":"你活下来了 真棒"},
+    {"key":"dead_text","content":"偶不 你变成百叶结红烧肉了"},
+    {"key":"ending1","content":"就算努力去和同类竞争内卷，最后也只是把便当的时间推迟而已"},
     {"key":"ending2","content":"猪猪们逃出了农场。"}
 ]}

@@ -11,7 +11,7 @@ public class FoodManager : MonoBehaviour
     [SerializeField] private float spawnIntervalMax = 0.5f;
     private float timer = 0;
     private float spawnInterval;
-    private bool freezed = false;
+    private bool freezed = true;
 
     void Start()
     {

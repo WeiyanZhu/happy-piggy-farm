@@ -9,20 +9,18 @@ public class ResultPageManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject nextButton;
     [SerializeField] private GameObject mainMenuButton;
+    [SerializeField] private GameObject surviveText;
+    [SerializeField] private GameObject deadText;
+    [SerializeField] private GameObject badEndText;
 
-    public void LastDayCheckResult()
-    {
-        // kill player
-        // display end game stuff
-    }
 
-    public void CheckResult(List<Pig> pigs)
+    public void CheckResult(List<Pig> pigs, int day)
     {
         SetUpPage();
-        StartCoroutine(CheckResultRoutine(pigs));
+        StartCoroutine(CheckResultRoutine(pigs, day));
     }
 
-    private IEnumerator CheckResultRoutine(List<Pig> pigs)
+    private IEnumerator CheckResultRoutine(List<Pig> pigs, int day)
     {
         int fattest = 0;
         int thinnest = 0;
@@ -43,16 +41,25 @@ public class ResultPageManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         // kill pigs
         resultPagePigs[fattest].DieAnimation();
+        pigs[fattest].Die();
         yield return new WaitForSeconds(1f);
+        // if it's day 6 enter bad end
+        if(day >= 6)
+        {
+            badEndText.SetActive(true);
+            mainMenuButton.SetActive(true);
+            yield break;
+        }
         resultPagePigs[thinnest].DieAnimation();
         yield return new WaitForSeconds(1f);
-        pigs[fattest].Die();
         pigs[thinnest].Die();
         // continue or end game
         if(pigs[0].Dead)
         {
+            deadText.SetActive(true);
             mainMenuButton.SetActive(true);
         }else{
+            surviveText.SetActive(true);
             nextButton.SetActive(true);
         }
     }
@@ -61,6 +68,10 @@ public class ResultPageManager : MonoBehaviour
     {
         nextButton.SetActive(false);
         mainMenuButton.SetActive(false);
+        surviveText.SetActive(false);
+        deadText.SetActive(false);
+        badEndText.SetActive(false);
+
         gameObject.SetActive(true);
         AudioManager.Instance.PlayMusic(BGMFileName.ResultOfTheDay);
     }

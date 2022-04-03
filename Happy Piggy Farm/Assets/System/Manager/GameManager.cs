@@ -13,20 +13,29 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private GameObject timeUpUI;
+    [SerializeField] private GameObject tutorialUI;
     // Start is called before the first frame update
     void Start()
     {
         day = 0;
+        dayText.gameObject.SetActive(false);
         foreach(Pig p in pigs)
             p.GetComponent<PigController>().Freeze();
         AudioManager.Instance.PlayMusic(BGMFileName.Farm);
-        SetupNewDay();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetUpFirstDay()
+    {
+        AudioManager.Instance.PlaySFX(SFXFileName.UIClickPig);
+        tutorialUI.SetActive(false);
+        dayText.gameObject.SetActive(true);
+        SetupNewDay();
     }
 
     // Enter End Day to show result of the day, then go to next day
@@ -43,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ShowResultOfTheDay(){
         yield return new WaitForSeconds(2);
-        resultPageManager.CheckResult(pigs);
+        resultPageManager.CheckResult(pigs, day);
     }
 
     public void SetupNewDay()
