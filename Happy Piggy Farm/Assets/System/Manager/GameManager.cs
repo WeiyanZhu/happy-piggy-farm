@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private FoodManager foodManager;
     [SerializeField] private ResultPageManager resultPageManager;
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI dayText;
+    [SerializeField] private GameObject timeUpUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +34,15 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.Instance.PlayMusic(BGMFileName.None);
         AudioManager.Instance.PlaySFX(SFXFileName.TimeUp);
+        timeUpUI.SetActive(true);
         foodManager.Freeze();
         foreach(Pig p in pigs)
             p.GetComponent<PigController>().Freeze();
+        StartCoroutine(ShowResultOfTheDay());
+    }
+
+    private IEnumerator ShowResultOfTheDay(){
+        yield return new WaitForSeconds(2);
         resultPageManager.CheckResult(pigs);
     }
 
@@ -42,6 +50,7 @@ public class GameManager : MonoBehaviour
     {
         day += 1;
         dayText.text = string.Format(TextLibrary.Instance.GetText("game", "day_x"), day);
+        timeUpUI.SetActive(false);
         foodManager.Reset();
         timer.ReStart();
         AudioManager.Instance.PlayMusic(BGMFileName.Farm);

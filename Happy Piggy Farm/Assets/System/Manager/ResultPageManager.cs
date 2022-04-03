@@ -6,7 +6,9 @@ public class ResultPageManager : MonoBehaviour
 {
     [SerializeField] private List<ResultPagePig> resultPagePigs = new List<ResultPagePig>();
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private GameObject surviveUI;
+    [Header("UI")]
+    [SerializeField] private GameObject nextButton;
+    [SerializeField] private GameObject mainMenuButton;
 
     public void LastDayCheckResult()
     {
@@ -17,6 +19,11 @@ public class ResultPageManager : MonoBehaviour
     public void CheckResult(List<Pig> pigs)
     {
         SetUpPage();
+        StartCoroutine(CheckResultRoutine(pigs));
+    }
+
+    private IEnumerator CheckResultRoutine(List<Pig> pigs)
+    {
         int fattest = 0;
         int thinnest = 0;
         for(int x = 0; x < pigs.Count; ++x)
@@ -33,36 +40,41 @@ public class ResultPageManager : MonoBehaviour
             if(pigs[x].Weight < pigs[thinnest].Weight)
                 thinnest = x;
         }
-
+        yield return new WaitForSeconds(2f);
         // kill pigs
         resultPagePigs[fattest].DieAnimation();
+        yield return new WaitForSeconds(1f);
         resultPagePigs[thinnest].DieAnimation();
+        yield return new WaitForSeconds(1f);
         pigs[fattest].Die();
         pigs[thinnest].Die();
         // continue or end game
         if(pigs[0].Dead)
         {
-
+            mainMenuButton.SetActive(true);
         }else{
-            surviveUI.SetActive(true);
+            nextButton.SetActive(true);
         }
     }
 
     private void SetUpPage()
     {
-        surviveUI.SetActive(false);
+        nextButton.SetActive(false);
+        mainMenuButton.SetActive(false);
         gameObject.SetActive(true);
         AudioManager.Instance.PlayMusic(BGMFileName.ResultOfTheDay);
     }
 
     public void ContinueButton()
     {
+        AudioManager.Instance.PlaySFX(SFXFileName.UIClickPig);
         gameObject.SetActive(false);
         gameManager.SetupNewDay();
     }
 
     public void BackToMainMenuButton()
     {
+        AudioManager.Instance.PlaySFX(SFXFileName.UIClickPig);
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }
