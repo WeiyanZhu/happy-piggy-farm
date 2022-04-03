@@ -8,6 +8,7 @@ public class ResultPageManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Animator resultPageAnimator;
     [Header("UI")]
+    [SerializeField] private GameObject swordImage;
     [SerializeField] private GameObject goodEndUI;
     [SerializeField] private GameObject nextButton;
     [SerializeField] private GameObject mainMenuButton;
@@ -65,6 +66,8 @@ public class ResultPageManager : MonoBehaviour
             deadText.SetActive(true);
             mainMenuButton.SetActive(true);
         }else if(pigs[0].GetComponent<Player>().EquipedSword){
+            swordImage.SetActive(true);
+            AudioManager.Instance.PlaySFX(SFXFileName.Equip);
             attackButton.SetActive(true);
             nextButton.SetActive(true);
         }
@@ -83,7 +86,8 @@ public class ResultPageManager : MonoBehaviour
         deadText.SetActive(false);
         badEndText.SetActive(false);
         goodEndUI.SetActive(false);
-
+        swordImage.SetActive(false);
+        
         gameObject.SetActive(true);
         AudioManager.Instance.PlayMusic(BGMFileName.ResultOfTheDay);
     }
