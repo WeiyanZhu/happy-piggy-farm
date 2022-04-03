@@ -2,7 +2,7 @@
     {"key":"weight","content":"Weight"},
     {"key":"today_result","content":"Today's Result"},
     {"key":"start_button","content":"Start"},
-    {"key":"next_button","content":"Next"},
+    {"key":"next_button","content":"Next Day"},
     {"key":"main_menu_button","content":"Main Menu"},
     {"key":"attack_button","content":"Attack"},
     {"key":"day_x","content":"Day {0}"},

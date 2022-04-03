@@ -2,7 +2,7 @@
     {"key":"weight","content":"体重"},
     {"key":"today_result","content":"今天的结果"},
     {"key":"start_button","content":"开始"},
-    {"key":"next_button","content":"继续"},
+    {"key":"next_button","content":"下一天"},
     {"key":"main_menu_button","content":"标题菜单"},
     {"key":"attack_button","content":"攻击"},
     {"key":"day_x","content":"第{0}天"},

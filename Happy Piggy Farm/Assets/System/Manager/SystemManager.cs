@@ -15,7 +15,6 @@ public class SystemManager : Singleton<SystemManager>
         {
             SystemManager.Instance.NewGamePlus = true;
         }
-        SystemManager.Instance.NewGamePlus = true;
     }
 
     void Update()
