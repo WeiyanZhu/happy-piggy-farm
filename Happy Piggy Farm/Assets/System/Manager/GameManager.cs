@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         day = 0;
+        foreach(Pig p in pigs)
+            p.GetComponent<PigController>().Freeze();
+        AudioManager.Instance.PlayMusic(BGMFileName.Farm);
         SetupNewDay();
     }
 
@@ -27,10 +30,12 @@ public class GameManager : MonoBehaviour
     // Enter End Day to show result of the day, then go to next day
     public void EndDay()
     {
-        resultPageManager.CheckResult(pigs);
+        AudioManager.Instance.PlayMusic(BGMFileName.None);
+        AudioManager.Instance.PlaySFX(SFXFileName.TimeUp);
         foodManager.Freeze();
         foreach(Pig p in pigs)
             p.GetComponent<PigController>().Freeze();
+        resultPageManager.CheckResult(pigs);
     }
 
     public void SetupNewDay()
@@ -39,6 +44,7 @@ public class GameManager : MonoBehaviour
         dayText.text = string.Format(TextLibrary.Instance.GetText("game", "day_x"), day);
         foodManager.Reset();
         timer.ReStart();
+        AudioManager.Instance.PlayMusic(BGMFileName.Farm);
         foreach(Pig p in pigs)
             p.GetComponent<PigController>().UnFreeze();
     }

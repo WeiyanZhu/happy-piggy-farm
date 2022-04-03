@@ -28,6 +28,7 @@ public class Food : MonoBehaviour
         if(collider.GetComponent<Pig>()){
             collider.GetComponent<Pig>().EatFood(this);
             manager.RemoveFood(this);
+            AudioManager.Instance.PlaySFX(SFXFileName.Eat);
             Destroy(gameObject);
         }
     }

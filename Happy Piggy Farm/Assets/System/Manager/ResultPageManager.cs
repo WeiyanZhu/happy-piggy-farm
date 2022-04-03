@@ -52,6 +52,7 @@ public class ResultPageManager : MonoBehaviour
     {
         surviveUI.SetActive(false);
         gameObject.SetActive(true);
+        AudioManager.Instance.PlayMusic(BGMFileName.ResultOfTheDay);
     }
 
     public void ContinueButton()

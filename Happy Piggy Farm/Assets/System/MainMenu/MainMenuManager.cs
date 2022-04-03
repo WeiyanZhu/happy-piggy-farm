@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
     private bool canControl = true;
 
     void Start(){
-        //SystemManager.instance.AudioManager.PlayMusic(BGMFileName.MainMenu);
+        AudioManager.Instance.PlayMusic(BGMFileName.MainMenu);
     }
 
     public void NewGameButton()
@@ -17,7 +17,7 @@ public class MainMenuManager : MonoBehaviour
             return;
         canControl = false;
 
-        //SystemManager.instance.AudioManager.PlaySFX(SFXFileName.UIConfirm);
+        AudioManager.Instance.PlaySFX(SFXFileName.UIClickPig);
         SceneManager.LoadScene("Game");
     }
 

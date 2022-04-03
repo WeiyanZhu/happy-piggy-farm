@@ -11,6 +11,7 @@ public class ResultPagePig : MonoBehaviour
     public void DieAnimation()
     {
         animator.SetTrigger("Die");
+        AudioManager.Instance.PlaySFX(SFXFileName.Stab);
     }
 
     public void UpdateInfo(Pig pig)

@@ -32,7 +32,7 @@ public class ObjectScaleAnimator : MonoBehaviour
     //needs to be called by EventTrigger component, set state when mouse enter object
     public void OnMouseEnterObject()
     {
-        //SystemManager.instance.AudioManager.PlaySFX(SFXFileName.UIHover);
+        AudioManager.Instance.PlaySFX(SFXFileName.UIHover);
         mouseOnObject = true;
     }
 
